@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.hello.frank.model">
+	<class name="User"  table="H_DUTY_PERSON">
+			<id name="personId" type="int">
+				<generator class="sequence">
+					<param name="sequence">H_DUTY_PERSON_SEQUENCE</param>
+				</generator>
+        	</id>
+        	<property name="name" type="string"/>
+        	<property name="tel" type="string"/>
+        	<property name="email" type="string"/>
+        	<property name="password" type="string"/>
+        	<!-- 
+        	<set name="eventTypes" table="H_SUBSCRITION" lazy="false"  fetch="join" cascade="all">
+        		<key>
+        			<column name="PERSONID" not-null="true"/>
+        		</key>
+        		<many-to-many entity-name="com.frank.hello.integration.model.EventType">
+        			<column name="EVENTCODE" not-null="true"/>
+        		</many-to-many>
+        	</set>
+        	 -->
+    </class>
+	
+</hibernate-mapping>
